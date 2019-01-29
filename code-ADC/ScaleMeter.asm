@@ -5,7 +5,7 @@
 
 .equ	Task_QueueSize	=	10	;Length of task queue
 .equ	Timers_PoolSize	=	5	;Amount of timers
-.equ	Timers_Discrete	=	10	;Дискретность службы таймеров, мс
+.equ	Timers_Discrete	=	10	;Interval between calling system timers service
 
 .def	BlinkLED	=	R15	;Status of blinking LED
 
