@@ -54,8 +54,8 @@ ADC_Interrupt_Done:
 
 
 ConvDone: ;[03]
-//Несрочные действия по окончании преобразования АЦП
-	;---- Шкала № 1
+//This task is called when an ADC convertion is completed
+	;---- Channel 1
 	LDS		R16, Meas1
 .if Scale1Min > 0
 	CPI		R16, Scale1Min+1
@@ -99,7 +99,7 @@ Scale1_3:
 Scale1_Peak_1:
 .endif
 
-	;---- Шкала № 2
+	;---- Channel 2
 	LDS		R16, Meas2
 .if Scale2Min > 0
 	CPI		R16, Scale2Min+1
@@ -144,7 +144,7 @@ Scale2_Peak_1:
 .endif
 	RET
 
-DecPeak1:	;[06] Уменьшить пиковую величину шкалы 1
+DecPeak1:	;[06] Decrease peak value on scale 1
 .ifdef Peak1
 	LDS		R16, DPeak1
 	CPI		R16, 0+1
@@ -156,7 +156,7 @@ DecPeak1_1:
 .endif
 	RET
 
-DecPeak2:	;[07] Уменьшить пиковую величину шкалы 2
+DecPeak2:	;[07] Decrease peak value on scale 2
 .ifdef Peak2
 	LDS		R16, DPeak2
 	CPI		R16, 0+1
@@ -167,4 +167,3 @@ DecPeak2_1:
 	AddTimer	7, Peak2_Time
 .endif
 	RET
-
