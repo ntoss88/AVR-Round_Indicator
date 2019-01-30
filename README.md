@@ -1,8 +1,8 @@
-# AVR-Round_Indicator
-Round-shaped indicator board based on ATMega48 ADC with tho LED scales (10 LEDs each scale)
-See project [wiki](https://github.com/R1BAN/AVR-Round_Indicator/wiki/Round-indicator) for more details.
+# AVR-Round_Temperature_Indicator
+Round-shaped indicator board based on ATmega48 + ds18b20 temperature sensor with two LED scales (10 LEDs each scale)
+See project [wiki](https://github.com/ntoss88/AVR-Round_Indicator/wiki/Round-indicator) for more details.
 
+# How to build firmware
+1. avr-gcc has to be installed
+2. run "make" in code folder
 
-To do:
-- draw a circuit diagram
-- add code for supporting DS18B20 sensor (minor changes in inputs connection required, no board cutting)
